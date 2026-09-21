@@ -18,5 +18,34 @@
 <section class='cta' id='orcamento'><div class='wrap cta-flex'><div><h2>Peça seu orçamento agora</h2><p>Fale com nossa equipe de vendas pelo WhatsApp.</p></div><div class='wa-options'><a class='btn' data-wa='principal' href='https://wa.me/5596991110333?text=Olá!%20Vim%20pelo%20site%20da%20Aço%20Norte%20Brasil%20e%20gostaria%20de%20solicitar%20um%20orçamento.' target='_blank'>VENDAS • 99111-0333</a><a class='btn' data-wa='vendas2' href='https://wa.me/5596991150888?text=Olá!%20Vim%20pelo%20site%20da%20Aço%20Norte%20Brasil%20e%20gostaria%20de%20solicitar%20um%20orçamento.' target='_blank'>VENDAS • 99115-0888</a></div></div></section></main>
 <footer class='footer'><div class='wrap'><div class='footer-grid'><div><div class='footer-brand'>ANB <span>AÇO NORTE BRASIL</span></div><p>Aço, confiança e soluções para sua obra em Macapá e região.</p><div class='social'><a href='https://www.instagram.com/aconortebrasil/' target='_blank' rel='noopener'>Instagram</a><a href='https://www.facebook.com/aconortebrasil' target='_blank' rel='noopener'>Facebook</a><a href='https://wa.me/5596991110333' target='_blank' rel='noopener'>WhatsApp</a></div></div><div><h4>CONTATO</h4><p><strong>VENDAS</strong><br><a href='https://wa.me/5596991110333' target='_blank' rel='noopener'>(96) 99111-0333</a><br><a href='https://wa.me/5596991150888' target='_blank' rel='noopener'>(96) 99115-0888</a></p><p>aconortebrasilap@gmail.com</p></div><div><h4>ACESSO RÁPIDO</h4><p><a href='#produtos'>Produtos</a><br><a href='#colunas'>Colunas sob medida</a><br><a href='#localizacao'>Localização</a><br><a href='#orcamento'>Solicitar orçamento</a></p></div></div><div class='footer-bottom'><div>Rodovia Duca Serra, Marabaixo • Macapá - AP<br>Em frente ao Condomínio Vila Bella.</div><div>© 2026 Aço Norte Brasil. Todos os direitos reservados.</div></div></div></footer>
 <a class='floating' data-wa='principal-flutuante' href='https://wa.me/5596991110333?text=Olá!%20Vim%20pelo%20site%20da%20Aço%20Norte%20Brasil%20e%20gostaria%20de%20solicitar%20um%20orçamento.' target='_blank' rel='noopener'>WhatsApp • Orçamento</a>
-<script>document.querySelectorAll('[data-wa]').forEach(function(a){a.addEventListener('click',function(){if(typeof gtag==='function'){gtag('event','whatsapp_click',{atendimento:a.dataset.wa});}})});</script>
+  <!-- Event snippet for WhatsApp - Site conversion -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18328409138/nQpQCNP_joAdELKo1aNE',
+    'event_callback': callback
+  });
+  return false;
+}
+</script>
+<script>
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'whatsapp_click', {
+        atendimento: a.dataset.wa || 'whatsapp'
+      });
+    }
+
+    gtag_report_conversion(a.href);
+  });
+});
+</script>
 </body></html>
